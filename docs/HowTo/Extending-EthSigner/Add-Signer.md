@@ -4,7 +4,8 @@ description: Adding an external signer to EthSigner
 
 # Creating an external signer for EthSigner
 
-EthSigner supports the implementation of additional external signers in the same way as Hashicorp Vault.
+The EthSigner source code is structured to enable additional signing mechanisms to be added by following
+an established pattern.
 
 To create an external signer:
 
@@ -19,7 +20,7 @@ To create an external signer:
     The new `SignerSubCommand` must include the parameters (tagged with PicoCLI annotations) to
     initialize your signer.
 
-1. Make the `createSigner()` function the entry point to create and return your signer.
+1. Update the `createSigner()` function to be the entry point to create and return your signer.
    Your signer is exposed only as a `TransactionSigner`.
 
     !!! note
